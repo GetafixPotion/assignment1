@@ -1,2 +1,16 @@
-<h1>Upcoming Events</h1>
+<%- include('../partials/header') %>
+
+<h1 class="page-title">Upcoming Events</h1>
 <p>Check out what's happening soon!</p>
+<div class="event-list">
+  <% events.forEach(event => { %>
+  <div class="event-card">
+    <img src="<%= event.image %>" alt="<%= event.title %> Image" />
+    <h2><%= event.title %></h2>
+    <p><strong>Date:</strong> <%= event.date %></p>
+    <p><strong>Location:</strong> <%= event.location %></p>
+  </div>
+  <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
