@@ -1,1 +1,41 @@
-<h1>About Us</h1>
+<%- include('../partials/header') %>
+
+    <div class="about-container">
+        <!-- Our Mission Section -->
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p>
+                We are committed to building a vibrant, inclusive, and supportive community
+                by bridging gaps between individuals, organizations, and resources. Our
+                portal serves as a digital hub for connecting community members through events
+                , information sharing, and meaningful collaboration. We strive to empower
+                every user — whether you're a volunteer, local leader, student, or resident
+                — with the tools and opportunities to actively participate, share ideas, and
+                drive positive change. Through transparent communication, shared values, and
+                collective action, we aim to foster a sense of belonging and mutual growth in
+                every interaction.
+            </p>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-list">
+                <% teamMembers.forEach(member=> { %>
+                    <div class="team-card">
+                        <h3>
+                            <%= member.name %>
+                        </h3>
+                        <p><strong>Role:</strong>
+                            <%= member.role %>
+                        </p>
+                        <p>
+                            <%= member.bio %>
+                        </p>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('../partials/footer') %>
