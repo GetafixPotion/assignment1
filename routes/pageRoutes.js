@@ -27,7 +27,30 @@ router.get("/", (req, res) => {
   res.render("pages/home");
 });
 
-router.get("/about", (req, res) => {});
+//about page
+const teamMembers = [
+  {
+    name: "Anouk van Alphen",
+    bio: "Council board president - manages the team"
+  },
+  {
+    name: "Jana Rademan",
+    bio: "Council board member - head of finance"
+  },
+  {
+    name: "Vian Kelly",
+    bio: "Council board member - head of events"
+  },
+  {
+    name: "Gideon Humphries",
+    bio: "Council board member - contact person"
+  }
+];
+
+router.get('/about', (req, res) => {
+  res.render('pages/about', { teamMembers });
+});
+
 
 router.get("/events", (req, res) => {
   res.render("pages/events", { events });
