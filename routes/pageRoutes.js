@@ -30,18 +30,22 @@ router.get("/", (req, res) => {
 //about page
 const teamMembers = [
   {
+    image: "/images/team_member1.png",
     name: "Anouk van Alphen",
     bio: "Council board president - manages the team"
   },
   {
+    image: "/images/team_member2.png",
     name: "Jana Rademan",
     bio: "Council board member - head of finance"
   },
   {
+    image: "/images/team_member3.png",
     name: "Vian Kelly",
     bio: "Council board member - head of events"
   },
   {
+    image: "/images/team_member4.png",
     name: "Gideon Humphries",
     bio: "Council board member - contact person"
   }
