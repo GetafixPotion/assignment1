@@ -80,7 +80,10 @@ router.get("/events", (req, res) => {
   res.render("pages/events", { events });
 });
 
-router.get("/contact", (req, res) => {});
+router.get("/contact", (req, res) => { 
+  res.render("pages/contact");
+});
+
 router.post("/contact", (req, res) => {
   submissions.push(req.body);
   res.redirect("/thankyou");
