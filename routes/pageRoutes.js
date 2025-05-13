@@ -20,11 +20,31 @@ const events = [
     image: "/images/workshop.jpg",
   },
 ];
+const upcomingEvents = [
+  {
+    title: "Food Drive Collection Week",
+    date: "2025-05-26",
+    location: "Radlof Park",
+    image: "/images/foodcollection.jpg",
+  },
+  {
+    title: "Senior Companion Day",
+    date: "2025-06-05",
+    location: "Central Stadium",
+    image: "/images/elderly.jpg",
+  },
+  {
+    title: "Community Talent Show",
+    date: "2025-06-13",
+    location: "The Fugard",
+    image: "/images/talent.jpg",
+  },
+];
 
 let submissions = [];
 
 router.get("/", (req, res) => {
-  res.render("pages/home");
+  res.render("pages/home", { upcomingEvents });
 });
 
 //about page
