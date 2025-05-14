@@ -28,29 +28,28 @@ Each page is dynamically rendered using EJS, with reusable partials for headers 
 ## 🗂️ Pages Breakdown
 
 ### Home Page & Thank You (Jana Rademan)
-- Used EJS for dynamic Upcoming Events rendering via an array passed through routes.
-- Included header/footer partials for consistent styling.
-- Styled with a warm orange theme.
-- Thank You page displays after form submission.
+For the Community Portal project, I designed and styled both the Home and Thank You pages using EJS templates in Visual Studio Code, and I connected everything to the backend using Express routes. On the Home page (home.ejs), I included shared header and footer partials at the top and bottom to maintain consistency across the site. The home page has a welcome message and outlines the portal's purpose. I also created a dynamic Upcoming Events section using EJS templating, where events are displayed in a loop. Each event consists of a title, date, location, image, and a short description. 
+
+To make this dynamic content work, I used an array of upcoming event objects in pageRoutes.js, each with relevant details like the title, date, and image path. I then passed this array to the home page through an Express route, allowing the events to render automatically. 
+
+I also built a simple Thank You page (thankyou.ejs) that appears after users submit the contact form (press the send button). It displays a brief confirmation message and, like the home page, includes the shared header and footer for a consistent look and feel. I created a separate route in pageRoutes.js to serve this page when users visit /thankyou. 
+
+Lastly, I styled the site using CSS, applying an orange color theme to the headers and footers to give the portal a happy and welcoming appearance. 
 
 ### About Page (Anouk van Alphen)
-- Displays team members using a dynamically rendered array.
-- Mission statement styled simply.
-- Layout styled using CSS Grid.
-- Images sourced from `/public/images`.
+The About page dynamically renders team member profiles and a mission statement using EJS. The content is passed from the backend (index.js) to the template (about.ejs). 
+
+This page displays information about the team (an image, name and role). This was styled using CSS grids. To populate the page I grabbed data from an array of objects rendered dynamically via EJS. The mission statement is contained within a simple HTML tag as it is just text. The images in the array containing the team information are stored in the public folder under images. 
 
 ### Events Page (Gideon Humphries)
-- Contains 3 categories:
-  - Community Events
-  - Upcoming Featured Events
-  - Previous Events
-- Hover overlays added to event cards for descriptions.
-- Today’s event dynamically highlighted.
+For this project, I was responsible for building and styling the Events section. I implemented dynamic rendering of events using EJS, with data sourced from backend arrays. I created three event categories: Main Community Events, Featured Upcoming Events and Previous Events. Each event card includes a hover overlay with a styled description, and I ensured clean layout separation using reusable EJS partials. I also added logic to highlight events occurring on the current day.  
 
 ###  Contact Page (Vian Kelly)
-- POST form captures Name, Email, and Message.
-- Data stored in a temporary in-memory array.
-- Smooth transitions and animated orange gradient background.
+Implemented the Contact form and its supporting routes then styled it to match the orange theme, linking the form to the backend express routes. On the contact,ejs, A POST form was used to capture the user’s Name, Email and Message and setup up corresponding routes. 
+
+To store submissions, i made use of the temporary in-memory array in pageRoutes.js, pushing each NAME, EMAIL and message object into it before redirecting to the thank you page. 	 
+
+Lastly, I enhanced the user experience by styling the form container with an animated warm orange gradient background and adding smooth hover transitions on the inputs and submit button. 
 
 ---
 
