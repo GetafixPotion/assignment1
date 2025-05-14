@@ -76,6 +76,8 @@ Lastly, I enhanced the user experience by styling the form container with an ani
 ├── app.js / index.js
 └── package.json
 
+<pre> ## 📁 Project Structure ```bash ├── routes/ │ └── pageRoutes.js ├── views/ │ ├── pages/ │ └── partials/ ├── public/ │ ├── css/ │ └── images/ ├── app.js / index.js └── package.json ``` </pre>
+
 ---
 
 ## 📈 GitHub Documentation
