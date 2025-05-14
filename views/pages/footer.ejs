@@ -1,5 +1,21 @@
 <footer>
   <p>&copy; 2025 Community Portal</p>
 </footer>
+
+<a href="#" class="back-to-top" title="Back to Top">↑</a>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.querySelector(".back-to-top");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

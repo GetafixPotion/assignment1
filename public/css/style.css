@@ -49,11 +49,12 @@ nav a:hover {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 
 .event-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
 
 .event-card img {
@@ -73,6 +74,35 @@ nav a:hover {
   color: #666;
   font-size: 0.95rem;
 }
+.event-description {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: #5d3a00;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.event-card:hover .event-description {
+  opacity: 1;
+}
+.event-card:hover h2,
+.event-card:hover p:not(.event-description p) {
+  opacity: 0;
+}
+
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -134,4 +164,32 @@ h2 {
 
 .team-images{
   width: 250px;
+}
+.today-event {
+  border: 2px solid #ff9800;
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.4);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background: #5d3a00;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+
+.back-to-top:hover {
+  background: #4a2f00;
+}
+
+html {
+  scroll-behavior: smooth;
 }

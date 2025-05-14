@@ -14,7 +14,11 @@ Let’s build something great together.</p>
     <h2><%= event.title %></h2>
     <p><strong>Date:</strong> <%= event.date %></p>
     <p><strong>Location:</strong> <%= event.location %></p>
+    <div class="event-description">
+      <p><%= event.description %></p>
+    </div>
   </div>
   <% }) %>
 </div>
+
 <%- include('../partials/footer') %>
