@@ -100,7 +100,7 @@ cd assignment1
 npm install
 
 # Start the server with nodemon
-npx nodemon index.js
+npm run dev
 
 # Visit in your browser
 http://localhost:3000
