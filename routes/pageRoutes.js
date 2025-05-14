@@ -2,10 +2,8 @@ const express = require("express");
 const router = express.Router();
 const today = new Date().toISOString().split("T")[0];
 
-router.get("/events", (req, res) => {
-  res.render("pages/events", { events, previousEvents, upcomingEvents, today });
-});
 
+//#region data arrays
 const events = [
   {
     title: "Community Cleanup Day",
@@ -100,21 +98,7 @@ const previousEvents = [
   }
 ];
 
-let submissions = [];
 
-router.get("/", (req, res) => {
-  res.render("pages/home", { upcomingEvents });
-});
-
-router.get("/events", (req, res) => {
-  res.render("pages/events", { events, previousEvents, today });
-});
-
-// Sort events by date
-events.sort((a, b) => new Date(a.date) - new Date(b.date));
-previousEvents.sort((a, b) => new Date(b.date) - new Date(a.date)); // recent past first
-
-//about page
 const teamMembers = [
   {
     image: "/images/team_member1.png",
@@ -138,12 +122,31 @@ const teamMembers = [
   }
 ];
 
+//#endregion
+
+//home page
+router.get("/", (req, res) => {
+  res.render("pages/home", { upcomingEvents });
+});
+
+//about page
 router.get('/about', (req, res) => {
   res.render('pages/about', { teamMembers });
 });
 
-//contact page
-router.get("/contact", (req, res) => { 
+//events page
+router.get("/events", (req, res) => {
+  res.render("pages/events", { events, previousEvents, upcomingEvents, today });
+});
+
+// Sort events by date
+events.sort((a, b) => new Date(a.date) - new Date(b.date));
+previousEvents.sort((a, b) => new Date(b.date) - new Date(a.date)); // recent past first
+
+
+//contact page and thank you page
+let submissions = [];
+router.get("/contact", (req, res) => {
   res.render("pages/contact");
 });
 
